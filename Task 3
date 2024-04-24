@@ -1,0 +1,18 @@
+def main(start: int, end: int) -> list:
+    numbers = []
+    for i in range(start, end+ 1):
+        sub_nums = [ ]
+        for j in range(2, end // 2 + 1):
+            if i % j == 0:
+                sub_nums.append(j)
+        if len(sub_nums) >1:
+            continue
+        numbers.append(i)
+
+    return numbers
+
+
+print(main(11,2000))
+
+
+Существует множество вариантов алгоритмов работающих быстрее. Этот неэффективный, просто что первое в голову пришло
