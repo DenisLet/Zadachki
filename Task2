@@ -1,0 +1,17 @@
+def main(lst: list) -> list:
+    end = max(lst)                                #1
+    dividers = []
+    for i in lst:
+        sub_set = set()
+        for j in range(2, end + 1):
+            if i % j == 0:
+                sub_set.add(j)                    #2
+        dividers.append(sub_set)
+
+    return list(set.intersection(*dividers))      #3
+ 
+print(main([42, 12, 18]))
+
+1.Находим максимальное значение в списке(аргументе). 
+2.Находим все делители для каждого элемента списка и кладем и в сет(множество)
+3.Находим пересечение во всех полученных сетах с делителями и меняем тип данных с сета на список
