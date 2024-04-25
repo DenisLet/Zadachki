@@ -1,0 +1,17 @@
+def make_table(number):
+
+    table = []
+    header = ' '.join(['   '] + [str(i).rjust(3) for i in range(1, number + 1)])   #3 в rjust - таблица будет печататься ровно пока в ней не появятся четырехзначные числа
+    table.append(header)
+
+    for i in range(1, number + 1):
+        row = [str(i).rjust(3)] + [str(i * j).rjust(3) for j in range(1, number + 1)] #3 в rjust - таблица будет печататься ровно пока в ней не появятся четырехзначные числа, потом начнет съезжать и нужно увеличивать аргумент
+        row_str = ' '.join(row)
+        table.append(row_str)
+
+    for row in table:
+        print(row)
+
+make_table(31)
+
+Есть куча сторонних библиотек для красивого вывода в консоль
